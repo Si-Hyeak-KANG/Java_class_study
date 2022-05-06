@@ -29,7 +29,7 @@ public class StringCompareToChar {
         char b = '녕';
 
         String test = "" + a + b;
-        String test2 = String.valueOf(a) + String.valueOf(b);
+        String test2 = Character.toString(a) + Character.toString(b);
 
         System.out.println(test);
         System.out.println(test2);
@@ -39,6 +39,16 @@ public class StringCompareToChar {
         System.out.println(""+a);
         System.out.println(Character.SIZE);
         System.out.println(Integer.SIZE);
+
+        String str1 = "H";
+        String str2 = "H";
+
+        System.out.println(str1 == str2); // true
+
+        String str3 = new String("H");
+
+        System.out.println(str1 == str3);
+
 
     }
 
