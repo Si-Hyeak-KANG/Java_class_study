@@ -89,31 +89,15 @@ public class Array {
         return result;
 
     }
-    public String createPhoneNumber(int[] arr) {
-        // TODO:
-
-        String result = "";
-
-        for(int i = 0; i < arr.length; i++) {
-
-            if(arr.length == 8) {
-                result = "010";
-            }
-
-            result += arr[i];
-        }
-        
-        result.replace(,"(");
-
-        return result;
-
-
-    }
 
     public static void main(String[] args) {
 
 
         Array test = new Array();
+
+        int m = 4;
+        int n = (int) 4.0;
+
 
         System.out.println(Arrays.toString(test.getAllElementsButNth(new int[]{1,2,3},1)));
     }
