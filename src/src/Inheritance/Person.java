@@ -2,14 +2,14 @@ package Inheritance;
 
 public class Person {
 
-    String name;
+    private String name;
     private int age;
 
     private void learn() {
         System.out.println("공부");
     }
 
-    protected void walk() {
+    public void walk() {
         System.out.println("걷기");
 
     }
@@ -17,6 +17,25 @@ public class Person {
     public void eat() {
         System.out.println("먹기");
     }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
 
 }
 

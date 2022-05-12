@@ -6,11 +6,12 @@ public class PersonTest {
 
     public static void main(String[] args) {
 
-        Programmer hyunsuk = new Programmer();
+        Person p = new Person();
 
-        Dancer hong = new Dancer();
+        p.setName("현석");
+        p.setAge(2);
 
-        hong.walk();
+        System.out.println(p.getName() + ", " + p.getAge() );
 
     }
 }
