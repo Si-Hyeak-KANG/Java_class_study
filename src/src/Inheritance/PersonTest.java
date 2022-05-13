@@ -8,11 +8,10 @@ public class PersonTest {
 
         Person p = new Person();
 
-        p.setName("현석");
-        p.setAge(2);
+        p.setName("건휘");
+        p.setAge(-1);
 
-        System.out.println(p.getName() + ", " + p.getAge() );
-
+        System.out.println(p.getName() + ", " + p.getAge());
     }
 }
 

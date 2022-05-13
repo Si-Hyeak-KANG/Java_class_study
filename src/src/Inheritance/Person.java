@@ -18,7 +18,6 @@ public class Person {
         System.out.println("먹기");
     }
 
-
     public String getName() {
         return name;
     }
@@ -32,10 +31,12 @@ public class Person {
     }
 
     public void setAge(int age) {
+
+        if(age < 0) {
+            return;
+        }
         this.age = age;
     }
-
-
 
 }
 
