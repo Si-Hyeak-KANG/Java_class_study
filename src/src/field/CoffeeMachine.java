@@ -15,31 +15,40 @@ public class CoffeeMachine {
     boolean waterBtn; // 물 버튼
     boolean milkBtn; // 우유 버튼
 
+    public String getName() {
+
+        return this.name;
+    }
+
+    public void getBeans() {
+
+        System.out.println(beans);
+    }
+
+    public String getAll(String name, String name2) {
+
+        String result = name + "가 사용하는 원두는 " + name2;
+
+        return result;
+    }
+
 }
 
 class Test {
 
     public static void main(String[] args) {
 
-        // 첫 번째 커피 머신 생성
+        // 커피 머신 생성
         CoffeeMachine machineA = new CoffeeMachine();
 
-        // 두 번째 커피 머신 생성
-        CoffeeMachine machineB = new CoffeeMachine();
-
-        // 세 번째 커피 머신 생성
-        CoffeeMachine machineC = new CoffeeMachine();
-
-        machineA.name = "커피머신A"; // 첫 번째 커피 머신의 이름 변수에 "커피머신A" 저장(할당)
-        machineB.name = "커피머신B"; // 두 번째 커피 머신의 이름 변수에 "커피머신B" 저장(할당)
-        machineC.name = "커피머신C"; // 세 번째 커피 머신의 이름 변수에 "커피머신C" 저장(할당)
-
+        // 각 변수에 값 할당
+        machineA.name = "커피머신A";
         machineA.beans = "아라비카";
 
-        System.out.println(machineA.beans);
-        System.out.println(machineB.beans);
-        System.out.println(machineC.beans);
+        // 매개변수에 값을 입력한 메서드를 호출한 후 String 변수에 할당
+        String str = machineA.getAll(machineA.name, machineA.beans);
 
-        System.out.println(CoffeeMachine.beans);
+        // String 변수 str 호출
+        System.out.println(str);
     }
 }
