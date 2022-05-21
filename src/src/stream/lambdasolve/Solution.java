@@ -28,7 +28,7 @@ public class Solution {
         return avg;
     }
 
-    // 아래 코드는 변경하지 마세요.
+    
     static class Member {
         String name;
         String gender;
