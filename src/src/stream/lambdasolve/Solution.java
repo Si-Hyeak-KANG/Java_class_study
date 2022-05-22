@@ -28,7 +28,7 @@ public class Solution {
         return avg;
     }
 
-    
+
     static class Member {
         String name;
         String gender;
