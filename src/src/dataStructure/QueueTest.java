@@ -25,7 +25,5 @@ public class QueueTest {
         }
 
         ArrayList<Integer> list = new ArrayList<>();
-
-        list.size()
     }
 }
