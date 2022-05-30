@@ -12,6 +12,10 @@ public class Char {
 
     public static void main(String[] args) {
 
+        StringBuilder sb = new StringBuilder();
+
+        sb.reverse();
+
         char c1 = 'A';
         char c2 = '\u0000';
         char c3 = ' ';
