@@ -71,8 +71,8 @@ public class Test {
 
     /**
      *
-     * @param arr 현재 기록된 배열
-     * @param to 새로 추가할 값(인덱스)
+     * @param arr
+     * @param to
      * @return
      */
     public static boolean isTrue(List<Integer> arr, int to) {
