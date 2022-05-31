@@ -7,9 +7,9 @@ import java.util.*;
 public class QueuePrinter {
 
     public static void main(String[] args) {
-        int bufferSize = 4;
+        int bufferSize = 2;
         int capacities = 10;
-        int[] documents = new int[]{7, 4, 5, 6, 8, 3};
+        int[] documents = new int[]{7, 4, 5, 6};
 
         int output = queuePrinter(bufferSize, capacities, documents);
         System.out.println(output);
@@ -25,75 +25,52 @@ public class QueuePrinter {
         for(int data : documents) {
             list.add(data);
         }
-        for(int i =0; i < bufferSize; i++) {
+        // bufferSize만한 인쇄 대기열을 만든다.
+        for(int i = 0; i < bufferSize; i++) {
             queue.add(0);
         }
 
         int time = 0;
-        int i = 0;
 
+        // 대기중인 문서가 있을 경우
         while(list.size() > 0) {
+
+            int currIndex = 0;
+            int nextIndex = currIndex + 1;
             int value = 0;
-            int curr = documents[i];
 
-            if(i!=0 && queue.peek() != documents[i]) {
-                time++;
-            }
-
+            queue.add(list.get(0));
             queue.poll();
-            queue.add(curr);
+            time++;
 
-            if(i==0){
-                time++;
+            for (Integer data : queue) {
+                value += data;
             }
 
-            value = curr;
-            int count = 1;
-            if(documents.length-1 != i) {
-                for (int j = i + 1; j < documents.length; j++) {
-                    int next = documents[j];
-                    value += next;
-
-                    if (value > capacities) {
-
-                        while(queue.peek()!=curr) {
-                            queue.poll();
-                            queue.add(0);
-                            time++;
-                        }
-                        i++;
-
+            if(list.size() != 1) {
+                if (value + list.get(nextIndex) <= capacities) {
+                    list = list.subList(nextIndex, list.size());
+                } else {
+                    while (true) {
                         value -= queue.peek();
-
-                        while (value > capacities) {
-                            queue.poll();
-                            queue.add(0);
-                            time++;
-                            value -= queue.peek();
+                        if (value + list.get(nextIndex) <= capacities) {
+                            list = list.subList(nextIndex, list.size());
+                            break;
                         }
-                        break;
-
+                        queue.poll();
+                        queue.add(0);
+                        time++;
                     }
-                    queue.poll();
-                    queue.add(next);
-                    time++;
-                    i = j;
-                    count++;
-
                 }
             } else {
-                while(queue.peek()!=curr) {
-                    queue.poll();
+                while(value <= 0) {
+                    value -= queue.poll();
                     queue.add(0);
                     time++;
                 }
-                queue.poll();
-                queue.add(0);
-                time++;
             }
-
-            list = list.subList(count, list.size());
         }
+
         return time;
     }
 }
