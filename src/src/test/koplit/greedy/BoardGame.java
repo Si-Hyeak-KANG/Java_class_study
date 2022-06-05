@@ -35,7 +35,7 @@ public class BoardGame {
             } else {
                 arr[i] = board[0+Y][0+X];
             }
-            
+
         }
 
         return Arrays.stream(arr).mapToInt(n->n).sum();
