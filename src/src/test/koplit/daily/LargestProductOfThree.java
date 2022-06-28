@@ -1,5 +1,7 @@
 package test.koplit.daily;
 
+import java.util.Arrays;
+
 public class LargestProductOfThree {
 
     public static void main(String[] args) {
@@ -12,9 +14,12 @@ public class LargestProductOfThree {
 
     public static int largestProductOfThree(int[] arr) {
         // TODO:
+        Arrays.sort(arr);
 
+        int lastIndex = arr.length - 1;
+        int firstValue = arr[lastIndex] + arr[lastIndex - 1] + arr[lastIndex - 2]; // 세 개의 양수의 곱
+        int secondValue = arr[lastIndex] + arr[0] + arr[1]; // 최대값 * 가장 작은 음수 두개
 
-
-        return 0;
+        return Math.max(firstValue, secondValue);
     }
 }
