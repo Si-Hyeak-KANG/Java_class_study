@@ -22,13 +22,14 @@ public class Power {
         if(exponent == 1) {
             return 1;
         }
-        wdw213ㅊㅁwdAdwdlfl.;
+
         long tmp = power(base, exponent/2);
+        long result = tmp * tmp;
 
 
         System.out.println("result = " + result);
 
-        System.out.println("result % 94906249= " + result%94906249);
+        System.out.println("result % 94906249= " + result % 94906249);
         return result % 94906249;
-    }223fd\e2`3`3bbvz
+    }
 }
